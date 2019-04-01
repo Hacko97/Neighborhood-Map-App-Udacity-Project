@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="vieport" content="width=device-width, initial-scale=1">
+        <title>neighborhood tour app</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="app" id="app">
+            <div class="list" id="list">
+                <div class="search" id="search">
+                    <input class="search-box" placeholder="Search.." id="search-box" data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'" />
+                </div>
+
+                <ul class="results" id="results" data-bind="foreach: filteredList">
+                    <li class="place" id="place" data-bind="text: name, click: bounce"></li>
+                </ul>
+            </div>
+
+            <div class="map" id="map"></div>
+        </div>
+
+        <script src="js/knockout-3.5.0.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/app.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA6qoUKQ3WJQd4ZxAahhFPM80WJbw-yws&callback=startApp&libraries=places" onerror="errorHandling()"></script>
+    </body>
+</html>
